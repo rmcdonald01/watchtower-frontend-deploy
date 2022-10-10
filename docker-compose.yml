@@ -1,0 +1,21 @@
+version: '3.7'
+
+networks:
+  proxy:
+    external: true
+
+services:
+  watchtwer_frnt:
+    image: ramon101/my-repo:wtch-twr_frntnd
+    container_name: watchtower_frnt_app
+    restart: always
+    networks:
+      - default
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.watchtowerfront-secure-osl.entrypoints=websecure"
+      - "traefik.http.routers.watchtowerfront-secure-osl.rule=Host(`watchtower.objectivesolutions.xyz`)"
+    #ports:
+    #  - '8000:80'

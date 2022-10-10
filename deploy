@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Bail out on the first error
+set -e
+
+# Pull down the lastest image
+docker-compose pull watchtwer_frnt
+
+# Recreate container using the latest image
+docker-compose up -d
