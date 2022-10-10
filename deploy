@@ -4,7 +4,7 @@
 set -e
 
 # Pull down the lastest image
-/usr/local/bin/docker-compose/docker-compose pull watchtwer_frnt
+/usr/local/bin/docker-compose/docker-compose -f /home/b_one/sites/watchtower-frontend-deploy/docker-compose.yml pull watchtwer_frnt
 
 # Recreate container using the latest image
-/usr/local/bin/docker-compose/docker-compose up -d
+/usr/local/bin/docker-compose/docker-compose -f /home/b_one/sites/watchtower-frontend-deploy/docker-compose.yml up -d
